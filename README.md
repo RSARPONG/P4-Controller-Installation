@@ -20,3 +20,32 @@ sudo apt-get install -y texlive-full doxygen
 
 
 # 2 install dependencies needed for p4 behavior model version 2
+
+git clone https://github.com/p4lang/behavioral-model.git
+cd behavioral-model
+./install_deps.sh
+cd ..
+
+# install protobuf
+
+sudo pip install protobuf==3.2.0
+
+git clone https://github.com/protocolbuffers/protobuf.git
+cd protobuf
+
+sudo apt  install protobuf-compiler 
+
+git checkout v3.2.0 OR (git checkout ${PROTOBUF_COMMIT})
+export CFLAGS="-Os"
+export CXXFLAGS="-Os"
+export LDFLAGS="-Wl,-s"
+./autogen.sh
+./configure --prefix=/usr
+make
+sudo make install
+sudo ldconfig
+unset CFLAGS CXXFLAGS LDFLAGS
+cd ..
+
+protoc --version
+> libprotoc 3.12.4
