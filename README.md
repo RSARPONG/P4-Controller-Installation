@@ -89,6 +89,10 @@ Verify that the Docker Engine installation is successful by running the hello-wo
 
 sudo docker run hello-world
 
+This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits.
+
+You have now successfully installed and started Docker Engine.
+
 
 *********************************************************************************************
 # ONOS Controller
@@ -99,7 +103,7 @@ sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker   =====> (Creates a symlink
 
 
 *********************************************************************************************
-# Run Docker image
+# Installing ONOS on Docker
 *********************************************************************************************
 sudo docker pull onosproject/onos ========> (Download the onos image using).
 sudo docker run -t -d -p 8181:8181 -p 8101:8101 -p 5005:5005 -p 830:830 --name onos onosproject/onos  ==============> (Run a single instance of ONOS)
@@ -130,6 +134,15 @@ wget -O - http://localhost:8181/onos/ui > /dev/null   ============> (We can chec
 However this is from the mininet terminal to see it on our browser we should access with mininet's IP, to know which IP is configured run =====> ip addr | grep (Identify the ethernet port === eth0)
 
 ![image](https://github.com/RSARPONG/P4-Controller-Installation/assets/36456236/fd13ccd2-37b9-4336-96d0-e8fef3a18337)
+
+
+Defaults Username:onos/karaf      Passwrd: rocks/karaf
+
+## Change User Crendentials
+
+
+https://github.com/ArnoTroch/ONOS-Tutorial?tab=readme-ov-file#installing-onos
+
 
 
 
