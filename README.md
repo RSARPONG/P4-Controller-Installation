@@ -143,6 +143,12 @@ Defaults Username:onos/karaf      Passwrd: rocks/karaf
 
 https://github.com/ArnoTroch/ONOS-Tutorial?tab=readme-ov-file#installing-onos
 
+*********************************************************************************************
+## After a reboot of the server
+*********************************************************************************************
+
+sudo docker service create -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
+
 
 
 
