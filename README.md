@@ -151,4 +151,27 @@ sudo docker service create -d --hostname my-rabbit --name some-rabbit -e RABBITM
 
 
 
+*********************************************************************************************
+## Removing Docker from Ubuntu
+*********************************************************************************************
+
+docker system prune (To purge all unused or dangling images, containers, volumes, and networks, use the docker system prune command)
+
+To completely uninstall Docker: dpkg -l | grep -i docker
+
+To identify what installed package you have: 
+sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli docker-compose-plugin
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose-plugin
+
+The above commands will not remove images, containers, volumes, or user created configuration files on your host. If you wish to delete all images, containers, and volumes run the following commands:
+
+sudo rm -rf /var/lib/docker /etc/docker
+sudo rm /etc/apparmor.d/docker
+sudo groupdel docker
+sudo rm -rf /var/run/docker.sock
+
+You have removed Docker from the system completely.
+
+
+
 
