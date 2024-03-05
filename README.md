@@ -118,15 +118,6 @@ This command downloads a test image and runs it in a container. When the contain
 You have now successfully installed and started Docker Engine.
 
 
-*********************************************************************************************
-# ONOS Controller
-*********************************************************************************************
-sudo apt-get update   ========>  (Downloads the packages lists from the repositories)
-
-sudo apt-get -y install docker.io   =========> (Install the docker.io package)
-
-sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker   =====> (Creates a symlink from where the docker io package files where installed to the directory /usr/local/bin/docker, so a linux user can run the docker cli by just running docker)
-
 
 *********************************************************************************************
 # Installing ONOS on Docker
@@ -163,11 +154,14 @@ sudo docker ps  ============> (Ensure that the container is up and running) you 
 
 ![image](https://github.com/RSARPONG/P4-Controller-Installation/assets/36456236/935398f8-2553-41a9-90a3-ff73649be768)
 
+
 After running the container the Onos UI should be accessible through the following URL (http://localhost:8181/onos/ui) from mininet. 
 
 wget -O - http://localhost:8181/onos/ui > /dev/null   ============> (We can check that ONOS is running and that the UI is accessible), you should see something like:
 
+
 ![image](https://github.com/RSARPONG/P4-Controller-Installation/assets/36456236/99bb8742-eeef-40e2-88fd-725d72a231bb)
+
 
 However this is from the mininet terminal to see it on our browser we should access with mininet's IP, to know which IP is configured run =====> ip addr | grep (Identify the ethernet port === eth0)
 
